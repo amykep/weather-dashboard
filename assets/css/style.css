@@ -1,0 +1,87 @@
+h1, h2 {
+    color: aliceblue;
+    text-align: center;
+    padding: 5px;
+    font-weight: bolder;
+}
+#title{
+    background-image: linear-gradient(to right, rgb(6, 6, 236), rgb(2, 2, 70))
+}
+
+#searchLabel{
+    text-align: left;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 5px;
+}
+
+.search{
+    background-color: rgb(52, 151, 243);
+    border: 0px;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bolder;
+    color: aliceblue;
+}
+
+.searchInput{
+    padding: 7px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 7px;
+
+}
+
+.searchHistory{
+    border-top: solid 1px black;
+    margin: 5px;
+    width: 100%;
+    padding: 0px;
+}
+
+.searchItem{
+    background-color: rgb(192, 191, 190);
+    border-radius: 7px;
+    list-style: none;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+
+}
+
+.cityInfo{
+    border: solid 1px black;
+    width: 100%;
+    padding: 10px;
+}
+
+.temp{
+    background-color: rgb(2, 2, 54);
+    
+    color: aliceblue;
+
+}
+.test{
+    border: solid 2px black;
+
+    
+}
+
+.forecast{
+    font-weight: bolder;
+    margin-top: 10px;
+}
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.justify-space-between {
+    justify-content: space-between;
+  }
+
+
