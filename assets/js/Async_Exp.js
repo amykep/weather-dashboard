@@ -2,6 +2,7 @@ const apiKey = "25437cbe4ce85e57e46977492075f305";
 
 function main()
 {
+    var currentDate = new Date()
 
 }
 
@@ -31,7 +32,8 @@ function saveSearch(eventData)
         // save the old + new data to local storage
         localStorage.setItem("cities", JSON.stringify(oldSearchHistory));
 
-        getCitiWeather(searchInput)
+        var res = getCitiWeather(searchInput)
+        console.log("Get Citi Weather:", res)
     }
     else
     {
@@ -71,34 +73,71 @@ function getCitiWeather(city)
 
     console.log("city", city)
 
-    var apiurl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + apiKey;
+    var apiurl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + apiKey + "&units=imperial";
+
     console.log(apiurl)
 
+
+
+    var result = fetchVerification(apiurl).then(function (data) { return data });
+    console.log("result:", result)
+    if (result !== null && result !== "")
+    {
+        // while (result.PromiseState !== "fulfilled")
+        // {
+        //     console.log(result.PromiseState)
+        // }
+
+        if (result.PromiseObject !== null && result.PromiseObject !== "")
+        {
+            return result.PromiseObject
+        }
+
+        return null
+    }
+};
+
+async function fetchVerification(apiurl)
+{
     try
     {
-        fetch(apiurl).then(function (response)
+        const response = await fetch(apiurl);
+        if (response.ok)
         {
-            if (response.ok)
-            {
-                response.json().then(function (data)
-                {
-                    console.log(data)
-                    // displayCitiWeather(city, data)
+            const data = await response.json();
+            return data
+        }
+        else
+        {
+            alert("Error, please check your entry")
+        }
 
-                });
-            }
-            else
-            {
-                alert("Error, please check your entry")
-            }
 
-        })
+        // return fetch(apiurl).then(
+        //     function (response)
+        //     {
+        //         if (response.ok)
+        //         {
+        //             return response.json().then(
+        //                 function (data)
+        //                 {
+        //                     console.log(data)
+        //                     return data
+
+        //                 });
+        //         }
+        //         else
+        //         {
+        //             alert("Error, please check your entry")
+        //         }
+        //     })
     }
     catch (err)
     {
         alert("Unable to connect to OpenWeather");
     }
 };
+
 function displayCitiWeather(city, data)
 {
     console.log("data2", data)
