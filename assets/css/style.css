@@ -1,7 +1,7 @@
 h1, h2 {
     color: aliceblue;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
     font-weight: bolder;
 }
 #title{
@@ -59,16 +59,17 @@ h1, h2 {
     padding: 10px;
 }
 
-.temp{
-    background-color: rgb(2, 2, 54);
-    
-    color: aliceblue;
 
+.weathercontainer{
+    border: solid 1px rgb(78, 77, 77);
+    margin-bottom: 15px;  
+    padding: 20px;
 }
-.test{
-    border: solid 2px black;
 
-    
+.currentList{
+    list-style: none;
+    padding: 5px;
+    font-weight: bold;
 }
 
 .forecast{
@@ -83,5 +84,17 @@ h1, h2 {
 .justify-space-between {
     justify-content: space-between;
   }
+  .fiveDayContainer{
+      border: solid 1px rgb(78, 77, 77);
+      padding: 20px;
+  }
+  .fiveDayColor {
+    padding: 20px;
+    background-color: #032c55;
+    color: white;
+    float: left;
+    margin: 10px;
+
+}
 
 

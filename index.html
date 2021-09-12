@@ -21,7 +21,7 @@
 
         <div class="col-12 col-md-3 test">
 
-            <form>
+            <form id="form">
                 <label for="searchInput" id="searchLabel" class="searchLabel">Search for a City:</label></br>
                 <input type="text" name="searchInput" id="searchInput" class="searchInput" /></br>
                 <button type="submit" class="search" id="search">Search</button>
@@ -31,12 +31,29 @@
 
         <div class="col-12 col-md-9 test">
 
-            <div id="weather-container" class="test">CityInfo</div>
-            <div id="weather-container" class="temp">5-Day Forecast:</div>
+            <div id="weathercontainer" class="weathercontainer">
+                <h5 class="forecast">Current Weather </h5>
+                <ul class="cityCurrentData" id="cityCurrentData">
+            </div>
+
+            <div class="row">
+                <div class="col md-4">
+                    <div class="fiveDayContainer">
+                        <!-- Appends 5 day forecast-->
+                        <h5 class="forecast">5-Day Forecast </h5>
+                        <div class="row">
+                            <div class="col fiveDayOne">
+                            </div>
 
 
 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
 
     </main>
 
