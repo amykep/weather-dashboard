@@ -22,4 +22,4 @@ In this app I deployed the following:
 ### Link to the deployed application: https://amykep.github.io/weather-dashboard/
 
 ### Screenshot of the Daily Calendar:
-<img src=".assets/images/weather-dashboard.png">
+<img src="./assets/images/weather-dashboard.png">
