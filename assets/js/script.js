@@ -19,7 +19,7 @@ function getDateInfo()
 function saveSearch(eventData)
 {
     eventData.preventDefault()
-
+    searchInput = ""
     console.log(eventData)
     console.log("Target:", this)
 
@@ -64,13 +64,14 @@ function saveSearch(eventData)
         alert("Please enter a city name");
     }
 
-    displaySearch();
 };
 
 function refreshInput(eventData)
 {
-    // console.log(this)
-    document.getElementById('searchInput').value = this.textContent
+    var historySearch = document.getElementById('searchInput')
+    historySearch.value = this.textContent
+    console.log("historySearch", historySearch.value)
+    getCitiWeather(historySearch.value);
 }
 
 function displaySearch(displayDate)
@@ -224,6 +225,7 @@ function displayCurrentWeather(city, data)
     console.log(" weatherList.childNodes", weatherList.childNodes)
     weatherList.insertBefore(weatherIconImg, weatherList.childNodes[1]);
     console.log(" weatherList.childNodes 2", weatherList.childNodes)
+    searchInput = ""
 
 }
 
@@ -255,6 +257,7 @@ function displayForecast(city)
 
 
         })
+        searchInput = ""
 
     });
 }
